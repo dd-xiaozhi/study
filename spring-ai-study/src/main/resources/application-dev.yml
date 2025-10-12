@@ -1,0 +1,50 @@
+server:
+  port: 9081
+
+spring:
+  ai:
+    openai:
+      api-key: ${SILICONFLOW_API_KEY}
+      base-url: https://api.siliconflow.cn
+      chat:
+        options:
+          model: deepseek-ai/DeepSeek-V3
+      embedding:
+        options:
+          model: Qwen/Qwen3-Embedding-8B
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+
+      client:
+        observations:
+          log-prompt: true
+
+      observations:
+        log-prompt: true
+
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 4096
+        max-document-batch-size: 10000
+
+  datasource:
+    url: jdbc:postgresql://xiaozhi:5432/ai-user-db?sslmode=disable
+    username: ai-user
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
