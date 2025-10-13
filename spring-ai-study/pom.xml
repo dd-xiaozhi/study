@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>apiFlow</groupId>
-    <artifactId>aoaojiao-ai</artifactId>
+    <artifactId>spring-ai-study</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>aoaojiao-ai</name>
-    <description>aoaojiao-ai</description>
+    <name>spring-ai-study</name>
+    <description>spring-ai-study</description>
     <url/>
     <licenses>
         <license/>
