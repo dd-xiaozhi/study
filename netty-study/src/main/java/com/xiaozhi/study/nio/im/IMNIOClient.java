@@ -47,7 +47,7 @@ public class IMNIOClient {
                             if ((len = sc.read(buffer)) != -1) {
                                 buffer.flip();
                                 String msg = new String(buffer.array(), 0, len, StandardCharsets.UTF_8);
-                                System.out.println(STR."\r\{msg}");
+                                System.out.println("\r" + msg);
                                 System.out.print("请输入你要发送的消息：");
                             }
                         }
@@ -68,7 +68,7 @@ public class IMNIOClient {
                 try {
                     buffer.flip();
                     sc.write(buffer);
-                    System.out.print(STR."\r我：\{msg}\n");
+                    System.out.print("\r我：" + msg + "\n");
                     buffer.clear();
                 } catch (IOException e) {
                     throw new RuntimeException(e);

@@ -46,7 +46,7 @@ public class ImNIOServer {
                             String msg = new String(byteBuffer.array(), 0, len);
                             for (SocketChannel sessionChannel : sessionMap.keySet()) {
                                 if (sessionChannel != channel) {
-                                    String consent = STR."\{sessionMap.get(sessionChannel)}: \{msg}";
+                                    String consent = sessionMap.get(sessionChannel) + ": " + msg;
                                     byteBuffer.clear();
                                     byteBuffer.put(consent.getBytes(StandardCharsets.UTF_8));
                                     byteBuffer.flip();
@@ -58,8 +58,8 @@ public class ImNIOServer {
                     }
                 } catch (IOException e) {
                     SocketChannel channel = (SocketChannel) selectionKey.channel();
-                    System.out.println(STR."客户端连接异常或重置: [ ip: \{channel.getRemoteAddress()}, error msg: \{e.getMessage()} ]}");
-
+                    System.out.println("客户端连接异常或重置: [ ip: %s, error msg: %s ]}"
+                            .formatted(channel.getRemoteAddress(), e.getMessage()));
                     // 关闭通道和监听
                     channel.close();
                     selectionKey.channel();

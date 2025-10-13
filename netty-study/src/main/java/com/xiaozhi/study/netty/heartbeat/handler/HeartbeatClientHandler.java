@@ -36,8 +36,8 @@ public class HeartbeatClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        System.out.println(STR."收到服务端消息： \{msg}");
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        System.out.println("收到服务端消息：" + msg);
     }
 
     @Override

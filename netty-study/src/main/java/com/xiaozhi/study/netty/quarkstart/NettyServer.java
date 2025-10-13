@@ -42,7 +42,7 @@ public class NettyServer {
                                     .addLast(new SimpleChannelInboundHandler<String>() {
                                         @Override
                                         protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
-                                            System.out.println(STR."接收到客户端消息：\{msg}");
+                                            System.out.println("接收到客户端消息：" + msg);
                                         }
                                     });
                         }

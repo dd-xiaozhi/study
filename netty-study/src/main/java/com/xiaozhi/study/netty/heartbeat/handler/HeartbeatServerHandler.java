@@ -28,7 +28,7 @@ public class HeartbeatServerHandler extends ChannelInboundHandlerAdapter {
         if ("I am Alive".equals(msg.toString())) {
             ctx.writeAndFlush("I know");
         }
-        System.out.println(STR."收到客户端消息：\{msg}");
+        System.out.println("收到客户端消息：" + msg);
         super.channelRead(ctx, msg);
     }
 }
