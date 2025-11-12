@@ -12,6 +12,7 @@
         <module>netty-study</module>
         <module>load-balancing-scheduling-algorithm</module>
         <module>spring-ai-study</module>
+        <module>rocketmq-study</module>
     </modules>
 
     <properties>
@@ -39,5 +40,16 @@
             <version>33.3.1-jre</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.28</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.28</version>
+        </dependency>
     </dependencies>
 </project>
