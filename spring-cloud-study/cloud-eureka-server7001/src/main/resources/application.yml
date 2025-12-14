@@ -1,0 +1,18 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    # 是否向注册中心注册 -> 当前是注册中心，所以为false
+    register-with-eureka: false
+    # 是否需要检索服务 -> false表示当前端是服务中心
+    fetch-registry: false
+    # 服务端的url
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#      defaultZone: http://eureka7002.com:7002/eureka/ # 集群版
+  server:
+    # 禁用自我保护模式
+    enable-self-preservation: false
